@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeController!{% endblock %}
+
+{% block body %}
+
+    <h1>Posts : </h1>
+    <h4>The total number of Posts is : {{ posts.getTotalItemCount }}</h4>
+    <ul>
+        {% for post in posts %}
+
+    <li>{{ post.title }}</li><a href="{{ path('app_post_show' , {'id' : post.id}) }}">Show</a>
+
+        {% endfor %}
+    </ul>
+    <div class="navigation">
+        {{ knp_pagination_render(posts) }}
+    </div>
+{% endblock %}

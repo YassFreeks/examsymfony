@@ -1,0 +1,7 @@
+#Post.yaml
+App\Entity\Post:
+  post{0..15}:
+    createdAt: '<dateTimeBetween("-3 years", "now")>'
+    title (unique): "<word()>"
+    content: "<sentence(12)>"
+
